@@ -9,7 +9,7 @@ A stripped down version of Grml's zsh config.
 ## Installation
 ### Zplug
 ```
-zplug woefe/wbase.zsh
+zplug "woefe/wbase.zsh"
 ```
 
 ### Manual
