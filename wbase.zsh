@@ -46,9 +46,11 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 #}}}
 
 #{{{ Completion
-COMPDUMPFILE=$HOME/.zcompdump
 COMPDUMPCACHEDIR=$HOME/.zcompdumpcache/
-autoload -Uz compinit && compinit -d $COMPDUMPFILE
+if ! (( $+functions[zplug] )); then
+    COMPDUMPFILE=$HOME/.zcompdump
+    autoload -Uz compinit && compinit -d $COMPDUMPFILE
+fi
 
 function setup_completion() {
     # allow one error for every three characters typed in approximate completer
