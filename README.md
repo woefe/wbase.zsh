@@ -4,16 +4,16 @@ A stripped down version of Grml's zsh config.
 ## Why?
 - Faster startup. wbase.zsh avoids the many Zsh version checks of Grml's config (requires Zsh 5.4 or newer)
 - Better integration with plugin managers like [zplug](https://github.com/zplug/zplug)
-- No prompt, because there are better alternatives. You can set your own prompt. For example with [git-prompt.zsh](https://github.com/woefe/git-prompt.zsh) or [powerlevel10k](https://github.com/romkatv/powerlevel10k)
+- No prompt, because there are better alternatives. You can set your own prompt for example with [git-prompt.zsh](https://github.com/woefe/git-prompt.zsh) or [powerlevel10k](https://github.com/romkatv/powerlevel10k)
 
 ## Installation
-### Zplug
+### zplug
 ```
 zplug "woefe/wbase.zsh"
 ```
 
 ### Manual
-Clone this repo or download the [wbase.zsh](./wbase) file.
+Clone this repo or download the [wbase.zsh](./wbase.zsh) file.
 Then source it in your `.zshrc`. For example:
 
 ```bash
