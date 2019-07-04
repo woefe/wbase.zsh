@@ -39,3 +39,4 @@ echo "source ~/.zsh/wbase.zsh/wbase.zsh" >> .zshrc
     - `mkcd`: make directory and cd into it
     - `cdt`: make a temporary directory and cd into it
     - `cl`: change directory and list files
+    - `mkqrcode`: create QR-Code from stdin or arguments (depends on [qrencode](https://fukuchi.org/works/qrencode/))

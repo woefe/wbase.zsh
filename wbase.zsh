@@ -385,6 +385,19 @@ function cdt() {
     builtin cd "$(mktemp -d)"
     builtin pwd
 }
+
+# A small wrapper for qrencode (https://fukuchi.org/works/qrencode/).
+# Wraps the output of qrencode to have high black and white contrast.
+# Usage:
+# - With pipes: xclip -o | mkqrcode
+# - With arguments: mkqrcode "hello world"
+function mkqrcode() {
+    data="$@"
+    [[ -z "$data" ]] && IFS='' read -rd '' data
+    echo "\e[48;5;231m\e[38;5;232m"
+    qrencode -t utf8i -o - "$data"
+    echo "\e[0m"
+}
 #}}}
 
 # vim:foldmethod=marker
