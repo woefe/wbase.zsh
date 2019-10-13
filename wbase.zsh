@@ -336,6 +336,9 @@ bindkey -s '\e2' "!:1-1 \t"
 bindkey -s '\e3' "!:2-2 \t"
 bindkey -s '\e4' "!:3-3 \t"
 bindkey -s '\e5' "!:4-4 \t"
+
+bindkey '^r' history-incremental-search-backward
+bindkey '^s' history-incremental-search-forward
 #}}}
 
 #{{{ Useful functions
