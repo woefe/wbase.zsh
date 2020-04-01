@@ -3,6 +3,9 @@
 #
 # SPDX-License-Identifier: GPL-2.0-only
 
+# Set ZDOTDIR to HOME, if not set
+: "${ZDOTDIR="$HOME"}"
+
 #{{{ Utility functions
 function check_prog() {
      (( ${+commands[$1]} )) && return 0
@@ -46,9 +49,9 @@ export LESS_TERMCAP_us=$'\E[01;32m'
 #}}}
 
 #{{{ Completion
-COMPDUMPCACHEDIR=$HOME/.zcompdumpcache/
+COMPDUMPCACHEDIR=$ZDOTDIR/.zcompdumpcache/
 if ! (( $+functions[zplug] )); then
-    COMPDUMPFILE=$HOME/.zcompdump
+    COMPDUMPFILE=$ZDOTDIR/.zcompdump
     autoload -Uz compinit && compinit -d $COMPDUMPFILE
 fi
 
@@ -233,7 +236,7 @@ setopt unset
 #{{{ History settings
 HISTSIZE=100000
 SAVEHIST=100000
-HISTFILE="$HOME/.zsh_history"
+HISTFILE="$ZDOTDIR/.zsh_history"
 setopt append_history         # append history instead of replacing
 setopt hist_ignore_all_dups   # ignore duplication command history list
 setopt hist_ignore_space      # ignore commands that start with a space
@@ -245,7 +248,7 @@ setopt share_history          # share history between simultaneously running she
 setopt auto_pushd             # make cd push the old directory onto the directory stack.
 setopt pushd_ignore_dups      # don't push the same dir twice.
 DIRSTACKSIZE=20               # Max number of items on dirstack
-DIRSTACKFILE="$HOME/.zdirs"
+DIRSTACKFILE="$ZDOTDIR/.zdirs"
 
 function write_dirstack() {
     (( $DIRSTACKSIZE <= 0 )) && return
