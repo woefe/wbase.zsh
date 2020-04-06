@@ -36,7 +36,13 @@ zle -N slash-backward-kill-word
 
 #{{{ less and ls colors
 # color setup for ls:
-check_prog dircolors && eval $(dircolors -b)
+if check_prog dircolors
+then
+    eval $(dircolors -b)
+elif check_prog gdircolors
+then
+    eval $(gdircolors -b)
+fi
 
 # support colors in less
 export LESS_TERMCAP_mb=$'\E[01;31m'
